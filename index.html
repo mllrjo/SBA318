@@ -18,12 +18,7 @@ The rate of emergence will be set dynamically so as to modulate how challenging 
 and the time it takes the player to recognize the image - and if recognized
 correctly - will be recorded.
 
-I doubt it has any scientific value, but what matters is whether
-or not it is fun, and I can't guess that in advance.
-It is not obvious how to do it because of brightness considerations,
-but that will have to be left for the future.
-
-To start, we set up the numeral selection pad, generated dynamically for no good reason.
+To start, we set up the numeral selection pad.
 We set up a pad to enter source and target RGB levels, and transition time.
 That's two (R,G,B) values, where 0 <= R, G, B <= 255.
 Really ought to be projected onto a sphere with radius brightness, but never mind.
@@ -32,13 +27,21 @@ Click on "start" button to start each round.
 -->
 
     <h1>Title</h1>
+    <main>
+    <div class="Container">
+
+    </div>
+
     <div>
     </div>
 
     <br />
 
-    <div id="app"></div>
-    
+    <div id="app">
+
+    </div>
+
+    </main>
     <script src="app.js" async defer></script>
   </body>
 </html>
