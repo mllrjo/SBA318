@@ -1,3 +1,89 @@
+
+/*
+function updateBackgroundColor(input, color, e) {
+  e.preventDefault();
+  const value = Number(input)
+  input.style.backgroundColor = `rgb(${color === "red" ? value : 0}, ${
+  color === "green" ? value : 0
+    }, ${color === "blue" ? value : 0})`;
+}
+*/
+/* chatGPT with some revisions */
+/* I'd prefer to do it with forms */
+/*
+function updateBackgroundColor(input, color, e) {
+  e.preventDefault();
+  input.style.backgroundColor = color;
+  console.log(input);
+  const value = parseInt(input.value, 10); // Parse the input value as an integer
+  console.log(value);
+  if (!isNaN(value) && value >= 0 && value <= 255 && input.value.length === 3) {
+    input.style.backgroundColor = `rgb(${color === "red" ? value : 0}, ${
+      color === "green" ? value : 0
+    }, ${color === "blue" ? value : 0})`;
+  } else {
+    if(input.value.length > 3) input.value = "";
+    input.style.backgroundColor = color;
+}
+*/ 
+/* chatGPT with some revisions */
+/* I'd prefer to do it with forms */
+function updateBackgroundColor(input, color, e) {
+  e.preventDefault();
+  input.style.backgroundColor = color;
+  console.log(input);
+  const value = Number(input.value);
+  console.log(value);
+  if (!isNaN(value) && value >= 0 && value <= 255 && input.value.length === 3) {
+    input.style.backgroundColor = `rgb(${color === "red" ? value : 0}, ${
+      color === "green" ? value : 0
+    }, ${color === "blue" ? value : 0})`;
+  } else {
+    if(input.value.length > 3) input.value = "";
+    input.style.backgroundColor = color;
+  }
+}
+// Add event listeners for input fields
+const redInputOneEl = document.querySelector("#myFormRedOne input");
+const greenInputOneEl = document.querySelector("#myFormGreenOne input");
+const blueInputOneEl = document.querySelector("#myFormBlueOne input");
+
+const redInputTwoEl = document.querySelector("#myFormRedTwo input");
+const greenInputTwoEl = document.querySelector("#myFormGreenTwo input");
+const blueInputTwoEl = document.querySelector("#myFormBlueTwo input");
+
+redInputOneEl.addEventListener("input", (e) => updateBackgroundColor(redInputOneEl, "red", e));
+greenInputOneEl.addEventListener("input", (e) => updateBackgroundColor(greenInputOneEl, "green", e));
+blueInputOneEl.addEventListener("input", (e) => updateBackgroundColor(blueInputOneEl, "blue", e));
+
+redInputTwoEl.addEventListener("input", (e) => updateBackgroundColor(redInputTwoEl, "red", e));
+greenInputTwoEl.addEventListener("input", (e) => updateBackgroundColor(greenInputTwoEl, "green", e));
+blueInputTwoEl.addEventListener("input", (e) => updateBackgroundColor(blueInputTwoEl, "blue", e));
+
+
+/*
+const myFormRedOne = document.getElementById("myFormRedOne");
+myFormRedOne.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert(`You submitted: 
+  ${myFormRedOne.querySelector("input").value}`);
+});
+
+const myFormGreenOne = document.getElementById("myFormGreenOne");
+myFormGreenOne.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert(`You submitted: 
+  ${myFormGreenOne.querySelector("input").value}`);
+});
+
+const myFormBlueOne = document.getElementById("myFormBlueOne");
+myFormBlueOne.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert(`You submitted: 
+  ${myFormBlueOne.querySelector("input").value}`);
+});
+*/
+
 const rows = 1;
 const cols = 10;
 
@@ -41,7 +127,7 @@ app.appendChild(table);
 //}
 
 // Use fragments
-const frag_app = document.getElementById("app");
+const frag_app = document.getElementById("instr");
 
 // A builder function to make the created DOM structures consistent.
 function createPost(title, content) {
@@ -69,19 +155,19 @@ function createPost(title, content) {
   [{
     "userId": 10,
     "id": 99,
-    "title": "temporibus sit alias delectus eligendi possimus magni",
-    "body": "quo deleniti praesentium dicta non quod\naut est molestias\nmolestias et officia quis nihil\nitaque dolorem quia"
+    "title": "Instructions I",
+    "body": ""
   },
   {
     "userId": 10,
     "id": 100,
-    "title": "at nam consequatur ea labore ea harum",
-    "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
+    "title": "Instructions II",
+    "body": ""
   }]
 
 
   posts.forEach((post) => {
-    app.appendChild(createPost(post.title, post.body));
+    instr.appendChild(createPost(post.title, post.body));
   });
 })();
 

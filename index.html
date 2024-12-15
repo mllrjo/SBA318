@@ -14,7 +14,7 @@
 This game will involve identifying numerals that emerge with a specified RGB profile
 from a specified RGB background, along the vector connecting these two RGB settings.
 
-The rate of emergence will be set dynamically so as to modulate how challenging it is,
+The rate of transition will be set dynamically so as to modulate how challenging it is,
 and the time it takes the player to recognize the image - and if recognized
 correctly - will be recorded.
 
@@ -28,19 +28,109 @@ Click on "start" button to start each round.
 
     <h1>Title</h1>
     <main>
-    <div class="Container">
-
-    </div>
-
-    <div>
-    </div>
-
-    <br />
-
     <div id="app">
 
     </div>
-
+    <div id="stopWatch">
+      <button id="start">Start</button>
+    </div>
+    <div class="Container">
+      <div id="Pads">
+      <div id="PadOne">
+        <form action="" id="myFormRedOne" method="POST">
+          <input
+            type="number"
+            minlength="3"
+            maxlength="3"
+            min="0"
+            max="255"
+            name="Red"
+            placeholder="000"
+            pattern="^[0-9]+"
+            title="0-255"
+            required
+          />
+        </form>
+        <form action="" id="myFormGreenOne" method="POST">
+          <input
+            type="number"
+            minlength="3"
+            maxlength="3"
+            min="0"
+            max="255"
+            name="Green"
+            placeholder="000"
+            pattern="^[0-9]+"
+            title="0-255"
+            required
+          />
+        </form>
+        <form action="" id="myFormBlueOne" method="POST">
+          <input
+            type="number"
+            minlength="3"
+            maxlength="3"
+            min="0"
+            max="255"
+            name="Blue"
+            placeholder="000"
+            pattern="^[0-9]+"
+            title="0-255"
+            required
+          />
+        </form>
+      </div>
+      <div id="PadTwo">
+        <form action="" id="myFormRedTwo" method="POST">
+          <input
+            type="number"
+            minlength="3"
+            maxlength="3"
+            min="0"
+            max="255"
+            name="Red"
+            placeholder="000"
+            pattern="^[0-9]+"
+            title="0-255"
+            required
+          />
+        </form>
+        <form action="" id="myFormGreenTwo" method="POST">
+          <input
+            type="number"
+            minlength="3"
+            maxlength="3"
+            min="0"
+            max="255"
+            name="Green"
+            placeholder="000"
+            pattern="^[0-9]+"
+            title="0-255"
+            required
+          />
+        </form>
+        <form action="" id="myFormBlueTwo" method="POST">
+          <input
+            type="number"
+            minlength="3"
+            maxlength="3"
+            min="0"
+            max="255"
+            name="Blue"
+            placeholder="000"
+            pattern="^[0-9]+"
+            title="0-255"
+            required
+          />
+        </form>
+      </div>
+      </div>
+    </div>
+    <div id="instr">
+    </div>
+    <div>
+    </div>
+    <br />
     </main>
     <script src="app.js" async defer></script>
   </body>
